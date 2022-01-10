@@ -1,6 +1,10 @@
 import telebot
 
-TOKEN_BOT = ""
+TOKEN_BOT = os.getenv("TOKEN_BOT", None)
+if TOKEN_BOT is None:
+    print("Enter token to TOKEN_BOT env")
+    exit(-1)
+    
 bot = telebot.TeleBot(token=TOKEN_BOT)
 
 
